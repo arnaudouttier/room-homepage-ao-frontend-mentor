@@ -1,0 +1,18 @@
+<template>
+  <div class="site-logo">
+    <img src="images/logo.svg" alt="site logo" />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Logo'
+}
+</script>
+
+<style>
+.site-logo{
+  flex-grow: 1;
+  text-align: center;
+}
+</style>

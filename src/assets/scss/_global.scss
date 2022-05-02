@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Buttons
+
+button,
+.btn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: $button_primary_bg;
+  color: $button_primary_text_color;
+  padding: $button_primary_padding;
+
+  &:hover {
+    background-color: $button_primary_active_bg;
+  }
+}
+
+body {
+  font-family: $page_font;
+  background-color: lightcoral;
+}

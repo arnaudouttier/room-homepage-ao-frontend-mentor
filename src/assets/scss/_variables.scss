@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+
+// Colors
+
+$dark_gray: hsl(0, 0%, 63%);
+$very_dark_gray: hsl(0, 0%, 27%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+// Fonts
+
+$primary_font: "League Spartan", sans-serif;
+
+// Titles
+
+$title_primary_color: $black;
+$title_secondary_color: $very_dark_gray;
+$title_hover_color: $dark_gray;
+
+// Text p
+
+$text_color: $dark_gray;
+
+// Buttons
+
+$button_primary_bg: $black;
+$button_primary_active_bg: $very_dark_gray;
+$button_primary_text_color: $white;
+$button_primary_padding: clamp(1.25rem, 0.8782rem + 1.6077vw, 1.875rem);
+
+// Navigation
+
+$nav_text_color: $white;
+$nav_mobile_text_color: $black;
+
+// Page
+
+$page_bg_color: $white;
+$page_font: $primary_font;
