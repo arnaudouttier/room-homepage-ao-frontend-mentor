@@ -100,8 +100,4 @@ export default {
   transition: transform 0.8s ease;
 }
 
-.caroussel-content{
-  width: min(90vw);
-  margin: 60px auto;
-}
 </style>
