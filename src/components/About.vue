@@ -26,12 +26,11 @@
 
 <script>
 export default {
-  name: "About",
-};
+  name: 'About'
+}
 </script>
 
 <style  lang='scss' scoped>
-@use "../assets/scss/variables" as *;
 
 .about {
   grid-area: about;
@@ -43,11 +42,11 @@ export default {
   padding-block: 64px;
 
   h3 {
-    font-size: clamp(18px, calc(1.125rem + ((1vw - 3.75px) * 0.2424)), 20px);
+    font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.4848)), 1.25rem);    /* 16px (375vw) to 20px (1200vw)*/
     color: $title_primary_color;
     margin-bottom: 16px;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 5px;
     font-weight: 600;
   }
 

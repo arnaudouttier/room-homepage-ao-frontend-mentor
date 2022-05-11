@@ -16,39 +16,36 @@
 </template>
 
 <script>
-import MobileNavigation from "./components/MobileNavigation.vue";
-import TheLogo from "./components/TheLogo.vue";
-import TheNavigation from "./components/TheNavigation.vue";
-import Carousel from "./components/Carousel.vue";
-import About from "./components/About.vue";
+import MobileNavigation from './components/MobileNavigation.vue'
+import TheLogo from './components/TheLogo.vue'
+import TheNavigation from './components/TheNavigation.vue'
+import Carousel from './components/Carousel.vue'
+import About from './components/About.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     MobileNavigation,
     TheLogo,
     TheNavigation,
     Carousel,
-    About,
+    About
   },
-  data() {
+  data () {
     return {
-      image: "images/logo.svg",
-      activeNav: false,
-    };
+      image: 'images/logo.svg',
+      activeNav: false
+    }
   },
   methods: {
-    toogleNav() {
-      this.activeNav = !this.activeNav;
-    },
-  },
-};
+    toogleNav () {
+      this.activeNav = !this.activeNav
+    }
+  }
+}
 </script>
 
 <style lang="scss">
-@import "./assets/scss/variables";
-@import "./assets/scss/global";
-@import "./assets/scss/mixins";
 
 /* APP */
 

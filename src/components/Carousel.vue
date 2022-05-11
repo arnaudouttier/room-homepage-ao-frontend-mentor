@@ -50,68 +50,66 @@
 
 <script>
 export default {
-  name: "Carousel",
-  data() {
+  name: 'Carousel',
+  data () {
     return {
       index: 0,
-      nextSlideUrl: "",
-      precSlideUrl: "",
+      nextSlideUrl: '',
+      precSlideUrl: '',
       posts: [
         {
           id: 0,
-          title: "Discover innovative ways to decorate",
+          title: 'Discover innovative ways to decorate',
           content: `We provide unmatched quality, comfort, and style for property owners across the country. 
   Our experts combine form and function in bringing your vision to life. Create a room in your 
   own style with our collection and make your property a reflection of you and what you love.`,
-          imageMobile: "images/mobile-image-hero-1.jpg",
-          imageDesktop: "images/desktop-image-hero-1.jpg",
+          imageMobile: 'images/mobile-image-hero-1.jpg',
+          imageDesktop: 'images/desktop-image-hero-1.jpg'
         },
         {
           id: 1,
-          title: "We are available all across the globe",
+          title: 'We are available all across the globe',
           content: `With stores all over the world, it's easy for you to find furniture for your home or place of business. 
   Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
   store locator. Any questions? Don't hesitate to contact us today.`,
-          imageMobile: "images/mobile-image-hero-2.jpg",
-          imageDesktop: "images/desktop-image-hero-2.jpg",
+          imageMobile: 'images/mobile-image-hero-2.jpg',
+          imageDesktop: 'images/desktop-image-hero-2.jpg'
         },
         {
           id: 2,
-          title: "Manufactured with the best materials",
+          title: 'Manufactured with the best materials',
           content: `Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
   to ensure that every product is made as perfect and as consistent as possible. With three decades of 
   experience in this industry, we understand what customers want for their home and office.`,
-          imageMobile: "images/mobile-image-hero-3.jpg",
-          imageDesktop: "images/desktop-image-hero-3.jpg",
-        },
-      ],
-    };
+          imageMobile: 'images/mobile-image-hero-3.jpg',
+          imageDesktop: 'images/desktop-image-hero-3.jpg'
+        }
+      ]
+    }
   },
   computed: {
-    displayCurrentImg() {
-      return this.posts.filter((post) => post.id === this.index);
-    },
+    displayCurrentImg () {
+      return this.posts.filter((post) => post.id === this.index)
+    }
   },
   methods: {
-    prec() {
+    prec () {
       if (this.index > 0) {
-        this.index--;
-        this.precSlideUrl = "slide-" + this.index;
+        this.index--
+        this.precSlideUrl = 'slide-' + this.index
       }
     },
-    next() {
+    next () {
       if (this.index < 2) {
-        this.index++;
-        this.nextSlideUrl = "slide-" + this.index;
+        this.index++
+        this.nextSlideUrl = 'slide-' + this.index
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
-@use "../assets/scss/variables" as *;
-@use "../assets/scss/mixins" as *;
 
 /* CAROUSEL */
 
@@ -147,12 +145,12 @@ export default {
 /* Carousel-content */
 
 .carousel-content {
-  max-width: 80%;
+  max-width: 90%;
   min-height: 300px;
   margin: auto;
 
   h2 {
-    font-size: clamp(2.5rem, 1.9682rem + 2.269vw, 3.375rem);
+    font-size: clamp(2.25rem, calc(2.25rem + ((1vw - 0.234375rem) * 2.1818)), 3.375rem); /*36px (375vw) to 54px (1200px)  */
     color: $title_primary_color;
     margin-bottom: 16px;
     line-height: 0.9;
@@ -170,7 +168,7 @@ export default {
 .order-btn {
   max-width: 80%;
   color: $title_secondary_color;
-  font-size: 17px;
+  font-size: clamp(0.875rem, calc(0.875rem + ((1vw - 0.234375rem) * 0.3636)), 1.0625rem);  /* 14px (375 vw) to 17px  (1200 vw)*/
   letter-spacing: 10px;
   font-weight: 700;
   transition: color 0.4s ease;
@@ -191,7 +189,7 @@ export default {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .carousel-post {
     display: grid;
     grid-template-columns: 3fr 0.5fr 0.5fr 1fr 1fr;
@@ -218,6 +216,3 @@ export default {
   }
 }
 </style>
-
-
-

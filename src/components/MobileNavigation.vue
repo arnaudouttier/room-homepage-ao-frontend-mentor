@@ -16,25 +16,24 @@
 
 <script>
 export default {
-  name: "TheNavigation",
-  data() {
+  name: 'TheNavigation',
+  data () {
     return {
-      activeNav: false,
-    };
+      activeNav: false
+    }
   },
   props: {
-    isActiveNav: Boolean,
+    isActiveNav: Boolean
   },
   methods: {
-    enableNav() {
-      this.$emit("toogleNavigation");
-    },
-  },
-};
+    enableNav () {
+      this.$emit('toogleNavigation')
+    }
+  }
+}
 </script>
 
 <style lang="scss" >
-@use "../assets/scss/variables" as *;
 
 .site-navigation.mobile {
   height: 0;
@@ -56,7 +55,7 @@ export default {
 
   nav {
     height: inherit;
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -65,7 +64,7 @@ export default {
 
     ul {
       display: flex;
-      column-gap: 40px;
+      column-gap: 26px;
     }
   }
 }

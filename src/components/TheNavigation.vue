@@ -11,12 +11,11 @@
 
 <script>
 export default {
-  name: "TheNavigation",
-};
+  name: 'TheNavigation'
+}
 </script>
 
 <style lang="scss">
-@import "../assets/scss/variables";
 
 .site-navigation.desktop {
   display: none;
