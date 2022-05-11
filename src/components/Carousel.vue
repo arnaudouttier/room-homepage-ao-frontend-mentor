@@ -178,14 +178,14 @@ export default {
     color: $title_hover_color;
 
     img {
-      transform: translateX(6px);
+      transform: translate(6px , 2px);
       transition: all 0.4s ease-in-out;
-      color: $title_hover_color;
     }
   }
 
   img {
     margin-left: 18px;
+      transform: translateY(2px);
   }
 }
 
