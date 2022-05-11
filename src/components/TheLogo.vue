@@ -16,10 +16,10 @@ export default {
   text-align: center;
 }
 
-@media (min-width:1200px){
-  .site-logo{
+@media (min-width: 1400px) {
+  .site-logo {
     flex-grow: 0;
-    text-align : left;
+    text-align: left;
   }
 }
 </style>

@@ -1,51 +1,47 @@
 <template>
-  <section class="carousel">
-    <article class="carousel-post">
-      <div class="carousel-images">
-        <picture
-          :id="'slide-' + post.id"
-          class="carousel-image"
-          v-for="post in posts"
-          :key="post.id"
-        >
-          <source :srcset="post.imageDesktop" media="(min-width: 375px)" />
-          <img :src="post.imageMobile" alt="carousel image" />
-        </picture>
-      </div>
+  <div class="carousel-images">
+    <picture
+      :id="'slide-' + post.id"
+      class="carousel-image"
+      v-for="post in posts"
+      :key="post.id"
+    >
+      <source :srcset="post.imageDesktop" media="(min-width: 375px)" />
+      <img :src="post.imageMobile" alt="carousel image" />
+    </picture>
+  </div>
 
-      <div class="carousel-controle">
-        <a
-          :href="'#' + precSlideUrl"
-          class="primary-btn carousel-btn"
-          @click="prec()"
-        >
-          <img src="images/icon-angle-left.svg" alt="icon left" />
-        </a>
-        <a
-          :href="'#' + nextSlideUrl"
-          class="primary-btn carousel-btn"
-          @click="next()"
-        >
-          <img src="images/icon-angle-right.svg" alt="icon right" />
-        </a>
-      </div>
+  <div class="carousel-controls">
+    <a
+      :href="'#' + precSlideUrl"
+      class="primary-btn carousel-btn"
+      @click="prec()"
+    >
+      <img src="images/icon-angle-left.svg" alt="icon left" />
+    </a>
+    <a
+      :href="'#' + nextSlideUrl"
+      class="primary-btn carousel-btn"
+      @click="next()"
+    >
+      <img src="images/icon-angle-right.svg" alt="icon right" />
+    </a>
+  </div>
 
-      <div
-        class="carousel-content"
-        v-for="post in displayCurrentImg"
-        :key="post.id"
-      >
-        <div class="carousel-content-header">
-          <h2>{{ post.title }}</h2>
-          <p>{{ post.content }}</p>
-          <button class="btn order-btn">
-            SHOP NOW
-            <img src="images/icon-arrow.svg" alt="order button" />
-          </button>
-        </div>
-      </div>
-    </article>
-  </section>
+  <div
+    class="carousel-content"
+    v-for="post in displayCurrentImg"
+    :key="post.id"
+  >
+    <div class="carousel-content-header">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <button class="btn order-btn">
+        SHOP NOW
+        <img src="images/icon-arrow.svg" alt="order button" />
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -110,15 +106,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-/* CAROUSEL */
-
-.carousel {
-  grid-area: carousel;
-}
-
 /* Carousel-images */
-
 .carousel-images {
   @include carouselSnapScroll;
 
@@ -130,7 +118,7 @@ export default {
 
 /* Carousel-control */
 
-.carousel-controle {
+.carousel-controls {
   display: flex;
   justify-content: end;
   transform: translate(0, -100%);
@@ -148,10 +136,14 @@ export default {
   max-width: 80%;
   min-height: 300px;
   margin: auto;
-  z-index : 99;
+  z-index: 99;
 
   h2 {
-    font-size: clamp(2.25rem, calc(2.25rem + ((1vw - 0.234375rem) * 2.1818)), 3.375rem); /*36px (375vw) to 54px (1200px)  */
+    font-size: clamp(
+      36px,
+      calc(2.25rem + ((1vw - 3.75px) * 1.7561)),
+      54px
+    ); /*36px (375vw) to 54px (1400px)  */
     color: $title_primary_color;
     margin-bottom: 16px;
     line-height: 0.9;
@@ -169,7 +161,11 @@ export default {
 .order-btn {
   max-width: 80%;
   color: $title_primary_color;
-  font-size: clamp(12px, calc(0.75rem + ((1vw - 3.2px) * 0.5682)), 17px); /* 12px (320 vw) to 17px  (1200 vw)*/
+  font-size: clamp(
+    12px,
+    calc(0.75rem + ((1vw - 3.2px) * 0.5682)),
+    17px
+  ); /* 12px (320 vw) to 17px  (1200 vw)*/
   letter-spacing: 10px;
   transition: color 0.4s ease;
   margin: 40px auto 80px;
@@ -178,41 +174,24 @@ export default {
     color: $title_hover_color;
 
     img {
-      transform: translate(6px , 2px);
+      transform: translate(6px, 2px);
       transition: all 0.4s ease-in-out;
     }
   }
 
   img {
     margin-left: 18px;
-      transform: translateY(2px);
+    transform: translateY(2px);
   }
 }
 
 @media (min-width: 1400px) {
-  .carousel-post {
-    display: grid;
-    grid-template-columns: 3fr 0.5fr 0.5fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "images controle controle carouselContent carouselContent";
-  }
-
-  .carousel-images {
-    grid-area: images;
-  }
-
-  .carousel-controle {
-    grid-area: controle;
+  .carousel-controls {
     transform: none;
-    align-items: end;
-    justify-content: flex-start;
-    z-index: 99;
   }
 
-  .carousel-content {
-    max-width: 48%;
-    grid-area: carouselContent;
-    grid-column: 2/6;
+  .carousel-content{
+    max-width: 60%;
   }
 }
 </style>

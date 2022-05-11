@@ -16,12 +16,11 @@ export default {
 </script>
 
 <style lang="scss">
-
 .site-navigation.desktop {
   display: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .site-navigation.desktop {
     color: $nav_text_color;
     display: block;
@@ -41,7 +40,7 @@ export default {
           bottom: -8px;
           width: 16px;
           height: 2px;
-          background-color: #fff;
+          background-color: $white;
           opacity: 0;
           transition: opacity 0.4s ease;
         }

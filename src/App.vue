@@ -46,7 +46,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 /* APP */
 
 #app {
@@ -72,11 +71,7 @@ header {
   display: flex;
 }
 
-@media (min-width: 1200px) {
-  #app {
-    height: 100vh;
-  }
-
+@media (min-width: 1400px) {
   button.open-nav {
     display: none;
   }
@@ -84,13 +79,30 @@ header {
   /* MAIN */
 
   #main {
-    height: inherit;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr;
-    grid-template-areas:
-      "carousel"
-      "about";
+    grid-template-columns: repeat(2, 1fr) auto 1fr;
+    grid-template-rows: 2fr 0.3fr 1fr;
+  }
+
+  .carousel-images {
+    grid-area: 1 / 1 / 3 / 3;
+  }
+  .carousel-controls {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .carousel-content {
+    grid-area: 1 / 3 / 3 / 5;
+  }
+
+  .about-images.left {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .about-content {
+    grid-area: 3 / 2 / 4 / 4;
+  }
+  .about-images.right {
+    grid-area: 3 / 4 / 4 / 5;
   }
 }
 </style>

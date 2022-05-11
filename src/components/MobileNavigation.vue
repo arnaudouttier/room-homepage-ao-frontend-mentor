@@ -34,7 +34,6 @@ export default {
 </script>
 
 <style lang="scss" >
-
 .site-navigation.mobile {
   height: 0;
   background-color: $white;
@@ -51,7 +50,7 @@ export default {
     }
   }
 
-  /* Site Navigation List */
+  /* Site Navigation  */
 
   nav {
     height: inherit;
