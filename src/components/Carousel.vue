@@ -145,7 +145,7 @@ export default {
 /* Carousel-content */
 
 .carousel-content {
-  max-width: 90%;
+  max-width: 80%;
   min-height: 300px;
   margin: auto;
 
@@ -168,7 +168,7 @@ export default {
 .order-btn {
   max-width: 80%;
   color: $title_secondary_color;
-  font-size: clamp(0.875rem, calc(0.875rem + ((1vw - 0.234375rem) * 0.3636)), 1.0625rem);  /* 14px (375 vw) to 17px  (1200 vw)*/
+  font-size: clamp(12px, calc(0.75rem + ((1vw - 3.2px) * 0.5682)), 17px); /* 12px (320 vw) to 17px  (1200 vw)*/
   letter-spacing: 10px;
   font-weight: 700;
   transition: color 0.4s ease;
