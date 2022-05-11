@@ -140,9 +140,9 @@ export default {
 
   h2 {
     font-size: clamp(
-      36px,
-      calc(2.25rem + ((1vw - 3.75px) * 1.7561)),
-      54px
+      2.25rem,
+      calc(2.25rem + ((1vw - 0.234375rem) * 1.561)),
+      3.25rem
     ); /*36px (375vw) to 54px (1400px)  */
     color: $title_primary_color;
     margin-bottom: 16px;
@@ -190,8 +190,8 @@ export default {
     transform: none;
   }
 
-  .carousel-content{
-    max-width: 60%;
+  .carousel-content {
+    max-width: 64%;
   }
 }
 </style>
