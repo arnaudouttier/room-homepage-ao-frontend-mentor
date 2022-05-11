@@ -148,6 +148,7 @@ export default {
   max-width: 80%;
   min-height: 300px;
   margin: auto;
+  z-index : 99;
 
   h2 {
     font-size: clamp(2.25rem, calc(2.25rem + ((1vw - 0.234375rem) * 2.1818)), 3.375rem); /*36px (375vw) to 54px (1200px)  */
@@ -167,12 +168,11 @@ export default {
 
 .order-btn {
   max-width: 80%;
-  color: $title_secondary_color;
+  color: $title_primary_color;
   font-size: clamp(12px, calc(0.75rem + ((1vw - 3.2px) * 0.5682)), 17px); /* 12px (320 vw) to 17px  (1200 vw)*/
   letter-spacing: 10px;
-  font-weight: 700;
   transition: color 0.4s ease;
-  margin: 50px auto 80px;
+  margin: 40px auto 80px;
 
   &:hover {
     color: $title_hover_color;
@@ -210,7 +210,7 @@ export default {
   }
 
   .carousel-content {
-    max-width: 65%;
+    max-width: 48%;
     grid-area: carouselContent;
     grid-column: 2/6;
   }
