@@ -1,16 +1,20 @@
+@import 'variables.scss' ;
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+  line-height : 1;
 }
 
 ul {
   list-style: none;
 }
 
+
 img {
-  max-width: 100%;
-  height: auto;
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
 // Buttons
@@ -26,6 +30,7 @@ button,
   background-color: $button_primary_bg;
   color: $button_primary_text_color;
   padding: $button_primary_padding;
+  transition: background-color .4s ease;
 
   &:hover {
     background-color: $button_primary_active_bg;
@@ -34,5 +39,5 @@ button,
 
 body {
   font-family: $page_font;
-  background-color: lightcoral;
+  background-color: $page_bg_color;
 }

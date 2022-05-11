@@ -1,64 +1,58 @@
 <template>
-  <div class="site-navigation" :class="{ activeNav: isActiveNav }">
-    <nav>
-      <button class="btn close-nav" @click="enableNav()">
-        <img src="images/icon-close.svg" alt="close navigation button" />
-      </button>
-      <ul>
-        <li>Home</li>
-        <li>Shop</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="site-navigation desktop">
+    <ul>
+      <li>home</li>
+      <li>shop</li>
+      <li>about</li>
+      <li>contact</li>
+    </ul>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'TheNavigation',
-  data () {
-    return {
-      activeNav: false
-    }
-  },
-  props: {
-    isActiveNav: Boolean
-  },
-  methods: {
-    enableNav () {
-      this.$emit('toogleNavigation')
-    }
-  }
-}
+  name: "TheNavigation",
+};
 </script>
 
-<style lang="scss" >
-.site-navigation {
-  height: 0;
-  background-color: #ffff;
-  transition: height 0.4s ease;
+<style lang="scss">
+@import "../assets/scss/variables";
 
-  &.activeNav {
-    height: 120px;
+.site-navigation.desktop {
+  display: none;
+}
 
-    & + header {
-      opacity: 0;
-      z-index: -1;
-    }
-  }
-
-  nav {
-    height: inherit;
-    width: min(90vw);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media (min-width: 1200px) {
+  .site-navigation.desktop {
+    color: $nav_text_color;
+    display: block;
+    margin-left: 32px;
 
     ul {
       display: flex;
-      column-gap: 18px;
+
+      li {
+        margin-left: 32px;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: calc(50% - 8px);
+          bottom: -8px;
+          width: 16px;
+          height: 2px;
+          background-color: #fff;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        &:hover {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }

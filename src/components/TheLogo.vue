@@ -6,13 +6,20 @@
 
 <script>
 export default {
-  name: 'Logo'
-}
+  name: "Logo",
+};
 </script>
 
 <style>
-.site-logo{
+.site-logo {
   flex-grow: 1;
   text-align: center;
+}
+
+@media (min-width:1200px){
+  .site-logo{
+    flex-grow: 0;
+    text-align : left;
+  }
 }
 </style>

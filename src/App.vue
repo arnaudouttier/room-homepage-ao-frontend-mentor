@@ -1,74 +1,99 @@
 <template>
-    <TheNavigation :isActiveNav="activeNav" @toogleNavigation="toogleNav" />
+  <MobileNavigation :isActiveNav="activeNav" @toogleNavigation="toogleNav" />
   <header id="header">
     <div class="header-inner">
       <button class="btn open-nav" @click="toogleNav">
-      <img src="images/icon-hamburger.svg" alt="open navigation button" />
-    </button>
-    <TheLogo />
+        <img src="images/icon-hamburger.svg" alt="open navigation button" />
+      </button>
+      <TheLogo />
+      <TheNavigation />
     </div>
   </header>
   <main id="main">
-    <Caroussel />
+    <Carousel />
     <About />
   </main>
 </template>
 
 <script>
-import TheLogo from './components/TheLogo.vue'
-import TheNavigation from './components/TheNavigation.vue'
-import Caroussel from './components/Caroussel.vue'
-import About from './components/About.vue'
+import MobileNavigation from "./components/MobileNavigation.vue";
+import TheLogo from "./components/TheLogo.vue";
+import TheNavigation from "./components/TheNavigation.vue";
+import Carousel from "./components/Carousel.vue";
+import About from "./components/About.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
+    MobileNavigation,
     TheLogo,
     TheNavigation,
-    Caroussel,
-    About
+    Carousel,
+    About,
   },
-  data () {
+  data() {
     return {
-      image: 'images/logo.svg',
-      activeNav: false
-    }
+      image: "images/logo.svg",
+      activeNav: false,
+    };
   },
   methods: {
-    toogleNav () {
-      this.activeNav = !this.activeNav
-    }
-  }
-}
+    toogleNav() {
+      this.activeNav = !this.activeNav;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 @import "./assets/scss/variables";
 @import "./assets/scss/global";
+@import "./assets/scss/mixins";
 
-#app{
-  width: 100%;
-  height: auto;
+/* APP */
+
+#app {
   position: relative;
 }
 
-header{
+/* HEADER */
+
+header {
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 40px 0 ;
+  padding: 40px 0;
   background-color: transparent;
   z-index: 99;
-  transition: opacity .4s ease .2s;
+  transition: opacity 0.4s ease 0.2s;
+  cursor: pointer;
 }
 
-.header-inner{
-  width: min(90vw , 1270px);
+.header-inner {
+  width: min(90vw, 85vw);
   margin: 0 auto;
   display: flex;
 }
 
-#main{
-  position: absolute;
+@media (min-width: 1200px) {
+  #app {
+    height: 100vh;
+  }
+
+  button.open-nav {
+    display: none;
+  }
+
+  /* MAIN */
+
+  #main {
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "carousel"
+      "about";
+  }
 }
 </style>

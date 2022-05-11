@@ -1,0 +1,13 @@
+@mixin carouselSnapScroll {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  & > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    flex-basis: 100%;
+  }
+
+}
